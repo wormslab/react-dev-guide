@@ -1,6 +1,6 @@
-## Web 개발 가이드
+## react 개발 가이드
 
-* 키워드 중심으로 개발에 대한 경험 공유
+* react 를 공부하면서 정리해 놓은 것들
 
 ```bash
 git clone https://github.com/wormslab/react-dev-guide.git
