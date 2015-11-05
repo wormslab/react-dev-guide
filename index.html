@@ -148,6 +148,77 @@ class App {
 							</code></pre>
               <span>JSX를 사용한다면 사용할일이 없을듯</span>
 					</section>
+          <section>
+            <p>React application은 nested component 구조로 이루어져 있다.</p>
+            <p>SignIn component</p>
+						<pre><code class="hljs" data-trim>
+var React = require("react");
+var SignIn = React.createClass({
+  render: function() {
+    return (
+      <div>
+          <label htmlFor="username">Username
+            <input type="text" id="username" />
+          </label>
+            <label htmlFor="password">Password
+          <input type="text" id="password" />
+          </label>
+          <button id="signIn" onClick={this.props.onAuthComplete.bind(null,this._doAuth)}>Sign In</button>
+      </div>
+    );
+  },
+  _doAuth: function() {
+    return true;
+  }
+});
+            </code></pre>
+          </section>
+          <section>
+            <p>CreaateAccount Component</p>
+						<pre><code class="hljs" data-trim>
+var React = require("react");
+var CreateAccount = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <label htmlFor="username">Username:
+          <input type="text" id="username" />
+        </label>
+        <label htmlFor="password">Password:
+          <input type="text" id="password" />
+        </label>
+        <label htmlFor="password">Confirm Password:
+          <input type="text" id="confpassword" />
+        </label>
+        <button id="signIn" onClick={this.props.onAuthComplete.bind(null,this._createAccount)}>Create Account</button>
+      </div>
+    );
+  },
+  _createAccount: function() {
+    // do creation logic here
+    return true;
+  }
+});
+            </code></pre>
+          </section>
+          <section>
+            <p>SignIn 과 CreateAccount component 를 이용한 Authentication component</p>
+            <pre><code>
+var React = require("react");
+var SignIn = require("./signin.jsx");
+var CreateAccount = require("./createaccount.jsx");
+var Authentication = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <SignIn onAuthComplete={this.props.onAuthComplete}/>
+        <CreateAccount onAuthComplete={this.props.onAuthComplete}/>
+      </div>
+    );
+  }
+});
+            </code></pre>
+          </section>
 				</section>
 				<section>
 					<section>
