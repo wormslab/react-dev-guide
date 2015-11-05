@@ -38,16 +38,147 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<h1>React.js</h1>
+					<h3>공부하면서 정리한 것들</h3>
 				</section>
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-        </section>
+					<span>
+						&ldquo;The <span style="color: rgb(209, 136, 27);">only way to write complex software that won’t fall</span> on its face is to hold its global complexity down
+						—to <span style="color: rgb(209, 136, 27);">build it out of simple parts connected by well-defined interfaces</span>—
+						so that most problems are local and you can have some hope of upgrading a part without breaking the whole.&rdquo;
+					</span>
+				</section>
+				<section>
+					<h3>Concepts and Terminology</h3>
+					<ul>
+						<li>Components</li>
+						<li>Virtual DOM</li>
+						<li>JSX</li>
+						<li>Property</li>
+						<li>State</li>
+						<li>Flux</li>
+						<li>Tools</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h1>Components</h1>
+					</section>
+					<section>
+						<h3>Component functions</h3>
+						<ul>
+							<li>render</li>
+							<li>getInitialState</li>
+							<li>getDefaultProps</li>
+							<li>statics</li>
+							<li>displayName</li>
+							<li>componentWillMount</li>
+							<li>componentDidMount</li>
+							<li>componentWillReceiveProps</li>
+							<li>shouldComponentUpdate</li>
+							<li>componentWillUpdate</li>
+							<li>componentDidUpdate</li>
+							<li>componentWillUnmount</li>
+						</ul>
+					</section>
+					<section>
+						<h3>PropTypes</h3>
+						<ul>
+							<li>React.PropTypes.array</li>
+							<li>React.PropTypes.bool</li>
+							<li>React.PropTypes.func</li>
+							<li>React.PropTypes.number</li>
+							<li>React.PropTypes.object</li>
+							<li>React.PropTypes.string</li>
+							<li>React.PropTypes.any</li>
+						</ul>
+					</section>
+					<section>
+						<p>Initial render of a React component</p>
+						<ol>
+							<li>getInitialProps</li>
+							<li>getInitialState</li>
+							<li>componentWillMount</li>
+							<li>render</li>
+							<li>componentDidMount</li>
+						</ol>
+					</section>
+					<section>
+						<p>State changes on a components</p>
+						<ol>
+							<li>shouldComponentUpdate</li>
+							<li>componentWillUpdate</li>
+							<li>render</li>
+							<li>componentDidUpdate</li>
+						</ol>
+					</section>
+					<section>
+						<p>Props altered on a component</p>
+						<ol>
+							<li>componentWillRecerveProps</li>
+							<li>shouldComponentUpdate</li>
+							<li>comopnentWillUpdate</li>
+							<li>render></li>
+							<li>componentDidUpdate</li>
+						</ol>
+					</section>
+					<section>
+						<p>React.CreateFactory</p>
+							<pre><code class="hljs" data-trim>
+class Button {
+  // class stuff
+}
+module.exports = Button;
+
+// using the button element
+var Button = React.createFactory(require('Button'));
+class App {
+  render() {
+    return Button({ prop: 'foo' }); // ReactElement
+  }
+}
+							</code></pre>
+							<pre><code class="hljs" data-trim>
+var Button = require('Button');
+class App {
+  render() {
+    return &lt;Button prop="foo" /&gt;; // ReactElement
+  }
+}
+							</code></pre>
+              <span>JSX를 사용한다면 사용할일이 없을듯</span>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Virtual DOM</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>JSX</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Property</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>State</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Flux</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Tools</h1>
+					</section>
+				</section>
 			</div>
 		</div>
 
