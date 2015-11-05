@@ -156,15 +156,15 @@ var React = require("react");
 var SignIn = React.createClass({
   render: function() {
     return (
-      <div>
-          <label htmlFor="username">Username
-            <input type="text" id="username" />
-          </label>
-            <label htmlFor="password">Password
-          <input type="text" id="password" />
-          </label>
-          <button id="signIn" onClick={this.props.onAuthComplete.bind(null,this._doAuth)}>Sign In</button>
-      </div>
+      &lt;div&gt;
+          &lt;label htmlFor="username"&gt;Username
+            &lt;input type="text" id="username" /&gt;
+          &lt;/label&gt;
+            &lt;label htmlFor="password"&gt;Password
+          &lt;input type="text" id="password" /&gt;
+          &lt;/label&gt;
+          &lt;button id="signIn" onClick={this.props.onAuthComplete.bind(null,this._doAuth)}&gt;Sign In&lt;/button&gt;
+      &lt;/div&gt;
     );
   },
   _doAuth: function() {
@@ -180,18 +180,18 @@ var React = require("react");
 var CreateAccount = React.createClass({
   render: function() {
     return (
-      <div>
-        <label htmlFor="username">Username:
-          <input type="text" id="username" />
-        </label>
-        <label htmlFor="password">Password:
-          <input type="text" id="password" />
-        </label>
-        <label htmlFor="password">Confirm Password:
-          <input type="text" id="confpassword" />
-        </label>
-        <button id="signIn" onClick={this.props.onAuthComplete.bind(null,this._createAccount)}>Create Account</button>
-      </div>
+      &lt;div&gt;
+        &lt;label htmlFor="username"&gt;Username:
+          &lt;input type="text" id="username" /&gt;
+        &lt;/label&gt;
+        &lt;label htmlFor="password"&gt;Password:
+          &lt;input type="text" id="password" /&gt;
+        &lt;/label&gt;
+        &lt;label htmlFor="password"&gt;Confirm Password:
+          &lt;input type="text" id="confpassword" /&gt;
+        &lt;/label&gt;
+        &lt;button id="signIn" onClick={this.props.onAuthComplete.bind(null,this._createAccount)}&gt;Create Account&lt;/button&gt;
+      &lt;/div&gt;
     );
   },
   _createAccount: function() {
@@ -210,10 +210,10 @@ var CreateAccount = require("./createaccount.jsx");
 var Authentication = React.createClass({
   render: function() {
     return (
-      <div>
-        <SignIn onAuthComplete={this.props.onAuthComplete}/>
-        <CreateAccount onAuthComplete={this.props.onAuthComplete}/>
-      </div>
+      &lt;div&gt;
+        &lt;SignIn onAuthComplete={this.props.onAuthComplete} /&gt;
+        &lt;CreateAccount onAuthComplete={this.props.onAuthComplete} /&gt;
+      &lt;/div&gt;
     );
   }
 });
