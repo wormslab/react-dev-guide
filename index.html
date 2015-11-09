@@ -67,7 +67,7 @@
           <section>
             <h3>Component functions</h3>
             <ul>
-              <li>render</li>
+              <li style="color: #D8A212;">render (required)</li>
               <li>getInitialState</li>
               <li>getDefaultProps</li>
               <li>statics</li>
@@ -224,20 +224,92 @@ var Authentication = React.createClass({
           <section>
             <h1>Virtual DOM</h1>
           </section>
+          <section>
+            <ul>
+              <li>RealDOM은 dinamic UI를 제어하기위해 최적화 되어있지 않다</li>
+              <li>DOM 을 직접 컨트롤 하는것은 느리다.</li>
+              <li>DOM을 추상화 하여 간한단 js object로 만들었다(Virtual DOM)</li>
+              <li>RealDOM을 직접수정하지 않고 VirtualDOM을 수정하여 연산을 빠르게 수행한다.</li>
+              <li>angular와 같이 digest loop을 반복하여 dirty check를 수행하지 않고 자체적인 diff algorithm을 사용한다</li>
+              <li>observer를 사용하여 event model을 사용한다</li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>VirtualDOM을 사용하여 변경된 부분을 빠른속도로 알아낼 수 있다</li>
+              <li>render() 에서 전체를 그리지만 실제로는 변경된 부분만 반영 된다</li>
+              <li>RealDOM수정은 batch처리로 이루어진다</li>
+              <li>subtree에 대해서만 업데이트를 한다.</li>
+            </ul>
+          </section>
         </section>
         <section>
           <section>
             <h1>JSX</h1>
+          </section>
+          <section>
+            <h3>javascript object를 DOM style로 작성을 할 수 있도록 도와준다</h3>
+          </section>
+          <section>
+            <pre><code>
+var App = (
+  &lt;Form&gt;
+    &lt;Form.Row&gt;
+      &lt;Form.Label /&gt;
+      &lt;Form.Input /&gt;
+    &lt;/Form.Row&gt;
+  &lt;/Form&gt;
+);
+            </code></pre>
+            <pre><code>
+var App = (
+  React.createElement(Form, null,
+    React.createElement(Form.Row, null,
+      React.createElement(Form.Label, null),
+      React.createElement(Form.Input, null)
+    )
+  )
+);
+            </code></pre>
+          </section>
+          <section>
+            <ul>
+              <li>HTML-like 형태로 보기쉽게 구조화 할 수 있다</li>
+              <li>코드가 간결하기 때문에(less verbose) 알아보기 쉽다</li>
+              <pre><code>
+var div = $("&lt;div&gt;&lt;/div&gt;");
+              </code></pre>
+              <p style="text-align: center;">vs</p>
+              <pre><code>
+var div = document.createElement("div");
+              </code></pre>
+              <li>jquery와 pure js의 느낌정도?</li>
+              <li>구조가 복잡해 질 수록 비교할 수 없을만큼 간단해진다</li>
+              <li>안써도 되지만 쓰면 엄청 편하다</li>
+            </ul>
           </section>
         </section>
         <section>
           <section>
             <h1>Property</h1>
           </section>
+          <section>
+            <ul>
+              <li>React component의 this.props에 할당되는 plain js object</li>
+              <li>component의 lifecycle에 관여하지 않는다</li>
+            </ul>
+          </section>
         </section>
         <section>
           <section>
             <h1>State</h1>
+          </section>
+          <section>
+            <ul>
+              <li>component의 lifecycle에 관여한다</li>
+              <li>외부에서 접근할 수 없다.</li>
+              <li>setState(), replaceState()를 이용해 업데이트 한다</li>
+            </ul>
           </section>
         </section>
         <section>
